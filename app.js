@@ -1,6 +1,7 @@
 // 引入插件
 const express = require('express')
 const exphbs = require('express-handlebars')
+const handlebars = require('handlebars')
 const methodOverride = require('method-override')
 const bodyParser = require('body-parser')
 const routes = require('./routes')
@@ -22,6 +23,14 @@ app.use(
   methodOverride('_method'),
   routes
 )
+
+// 客製 equal helper
+handlebars.registerHelper('ifEqual', function (category, targetCategory, options) {
+  if (category === targetCategory) {
+    return options.fn(this)
+  }
+  return options.inverse(this)
+})
 
 // 啟動專案，專案等待中...
 app.listen(port, () => {

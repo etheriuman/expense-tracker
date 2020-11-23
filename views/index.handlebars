@@ -17,7 +17,7 @@
   {{!-- 總金額 --}}
   <div class="row justify-content-center mb-5">
     <div class="col-6 text-center">
-      <p class="d-inline">總金額：</p><h2 class="d-inline">{{total}}</h2>
+      <p class="d-inline">總支出：</p><h1 class="d-inline">{{total}}</h1>
     </div>
   </div>
   {{!-- 項目列表 --}}
@@ -36,7 +36,7 @@
           <span style="line-height: 80px; font-size: 20px">{{this.amount}}</span>
         </div>
         <div class="d-flex align-items-center">
-          <button class="btn btn-outline-info" href="/records/{{this._id}}/edit">修改</button>
+          <a class="btn btn-outline-info" href="/records/{{this._id}}/edit">修改</a>
           <form action="/records/{{this._id}}?_method=DELETE" method="POST">
             <button class="btn btn-outline-danger ml-2">刪除</button>
           </form>
