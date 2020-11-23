@@ -8,15 +8,29 @@ const totalAmount = require('../../public/javascripts/totalAmount')
 // 載入 mongoose model
 const Record = require('../../models/record')
 
-// 設定路由
+// 設定路由 ----------
+
+// 首頁
 router.get('/', (req, res) => {
   Record.find()
         .lean()
         .sort({date: 'desc'})
         .then(records => {
-          let total = totalAmount(records)
-          res.render('index', {records, total})
+          const total = totalAmount(records)
+          res.render('index', { records, total })
         })
+        .catch(error => console.log(error))
+})
+
+// 篩選顯示項目
+router.get('/filter/:category', (req, res) => {
+  const category = req.params.category
+  Record.find({category: category})
+        .lean()
+        .then(records =>{
+          const total = totalAmount(records)
+           res.render('index', { records, total })
+          })
         .catch(error => console.log(error))
 })
 
