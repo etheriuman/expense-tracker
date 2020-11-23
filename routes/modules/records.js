@@ -4,6 +4,9 @@ const router = express.Router()
 // 載入 mongoose model
 const Record = require('../../models/record')
 
+// 載入  generateIcon
+const generateIcon = require('../../public/javascripts/icon')
+
 // 設定路由 ----------
 
 // 到編輯頁面
@@ -28,11 +31,13 @@ router.post('/', (req, res) => {
   const date = record.date
   const category = record.category
   const amount = record.amount
+  const icon = generateIcon(category)
   Record.create({
     name,
     date,
     category,
     amount,
+    icon
   })
         .then(() => res.redirect('/'))
         .catch(error => console.log(error))
@@ -41,6 +46,7 @@ router.post('/', (req, res) => {
 // 送出編輯項目表單
 router.put('/:id', (req, res) => {
   const id = req.params.id
+  req.body.icon = generateIcon(req.body.category)
   Record.findById(id)
         .then(record => {
           record = Object.assign(record, req.body)
