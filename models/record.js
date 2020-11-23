@@ -22,7 +22,6 @@ amount: {
 },
 icon: {
   type: String,
-  required: true
 }
 })
 

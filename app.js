@@ -34,5 +34,5 @@ handlebars.registerHelper('ifEqual', function (category, targetCategory, options
 
 // 啟動專案，專案等待中...
 app.listen(port, () => {
-  console.log(`this project is listening on http://localhost:${port}`)
+  console.log(`this project is listening on http://localhost:${port} at ${new Date()}`)
 })

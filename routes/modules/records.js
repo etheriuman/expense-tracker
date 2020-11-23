@@ -15,7 +15,30 @@ router.get('/:id/edit', (req, res) => {
         .catch(error => console.log(error))
 })
 
-// 送出編輯表單
+// 到新增頁面
+router.get('/new', (req, res) => {
+  res.render('new')
+})
+
+// 送出新增項目表單
+router.post('/', (req, res) => {
+  console.log('start ----------------')
+  const record = req.body
+  const name = record.name
+  const date = record.date
+  const category = record.category
+  const amount = record.amount
+  Record.create({
+    name,
+    date,
+    category,
+    amount,
+  })
+        .then(() => res.redirect('/'))
+        .catch(error => console.log(error))
+})
+
+// 送出編輯項目表單
 router.put('/:id', (req, res) => {
   const id = req.params.id
   Record.findById(id)

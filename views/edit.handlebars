@@ -3,17 +3,17 @@
   {{!-- name --}}
     <div class="form-row col-12 justify-content-center mb-5">
       <label class="align-center col-2 text-center" for="name">名稱:</label>
-      <input class="form-control col-4" name="name" id="name" value="{{record.name}}" equired>
+      <input class="form-control col-4" name="name" id="name" value="{{record.name}}" required>
     </div>
   {{!-- date --}}
     <div class="form-row col-12 justify-content-center mb-5">
       <label class="align-center col-2 text-center" for="date">日期:</label>
-      <input type="date" class="form-control col-4" name="date" id="date" value="{{record.date}}" equired>
+      <input type="date" class="form-control col-4" name="date" id="date" value="{{record.date}}" required>
     </div>
   {{!-- category --}}
   <div class="form-row col-12 justify-content-center mb-5">
     <label class="align-center col-2 text-center" for="category">類別:</label>
-    <select class="custom-select col-4" name="category" id="category">
+    <select class="custom-select col-4" name="category" id="category" required>
       <option value="living" {{#ifEqual record.category 'living'}}selected{{/ifEqual}}>家居物業</option>
       <option value="traffic" {{#ifEqual record.category 'traffic'}}selected{{/ifEqual}}>交通出行</option>
       <option value="entertainment" {{#ifEqual record.category 'entertainment'}}selected{{/ifEqual}}>休閒娛樂</option>
@@ -24,7 +24,7 @@
   {{!-- amount --}}
   <div class="form-row col-12 justify-content-center mb-5">
     <label class="align-center col-2 text-center" for="amount">金額:</label>
-    <input type="number" step="1" class="form-control col-4" name="amount" id="amount" value="{{record.amount}}" equired>
+    <input type="number" step="1" min="0" class="form-control col-4" name="amount" id="amount" value="{{record.amount}}" required>
   </div>
   <div class="row col-12 justify-content-center mb-5">
     <div class="col-2"></div>
