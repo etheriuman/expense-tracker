@@ -1,6 +1,8 @@
 // 引入插件
 const express = require('express')
 const exphbs = require('express-handlebars')
+const methodOverride = require('method-override')
+const bodyParser = require('body-parser')
 const routes = require('./routes')
 
 const app = express()
@@ -16,6 +18,8 @@ app.engine('handlebars', exphbs({defaultLayout: 'main'}))
 // 設定middle-ware
 app.use(
   express.static('public'),
+  bodyParser.urlencoded({extended: true}),
+  methodOverride('_method'),
   routes
 )
 

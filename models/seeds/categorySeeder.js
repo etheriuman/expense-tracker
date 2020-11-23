@@ -7,11 +7,26 @@ const Category = require('../category')
 // 產生種子資料
 db.once('open', () => {
   Category.create(
-    {category: 'living'},
-    {category: 'traffic'},
-    {category: 'entertainment'},
-    {category: 'food'},
-    {category: 'others'}
+    {
+      category: 'living',
+      icon: 'fas fa-home'
+    },
+    {
+      category: 'traffic',
+      icon: 'fas fa-shuttle-van'
+    },
+    {
+      category: 'entertainment',
+      icon: 'fas fa-grin-beam'
+    },
+    {
+      category: 'food',
+      icon: 'fas fa-utensils'
+    },
+    {
+      category: 'others',
+      icon: 'fas fa-pen'
+    }
   )
   console.log('create category data done!')
 })

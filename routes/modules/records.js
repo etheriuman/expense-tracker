@@ -5,11 +5,11 @@ const router = express.Router()
 const Record = require('../../models/record')
 
 // 設定路由
-router.get('/', (req, res) => {
-  Record.find()
-        .lean()
-        .sort({date: 'desc'})
-        .then(records => res.render('index', {records}))
+router.delete('/:id', (req, res) => {
+  const id = req.params.id
+  Record.findById(id)
+        .then(record => record.remove())
+        .then(() => res.redirect('/'))
         .catch(error => console.log(error))
 })
 

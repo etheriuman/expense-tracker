@@ -4,31 +4,36 @@
       "name": "高爾夫",
       "category": "entertainment",
       "date": "2048-10-10",
-      "amount": 2000
+      "amount": 2000,
+      "icon": "fas fa-grin-beam"
     },
     {
       "name": "拉麵",
       "category": "food",
       "date": "2048-10-12",
-      "amount": 230
+      "amount": 230,
+      "icon": "fas fa-utensils"
     },
     {
       "name": "汽車加油",
       "category": "traffic",
       "date": "2048-10-12",
-      "amount": 880
+      "amount": 880,
+      "icon": "fas fa-shuttle-van"
     },
     {
       "name": "汽車保養",
       "category": "traffic",
       "date": "2048-10-14",
-      "amount": 22000
+      "amount": 22000,
+      "icon": "fas fa-shuttle-van"
     },
     {
       "name": "結婚紀念日",
       "category": "food",
       "date": "2048-10-18",
-      "amount": 4700
+      "amount": 4700,
+      "icon": "fas fa-utensils"
     }
   ]
 }

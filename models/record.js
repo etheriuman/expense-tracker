@@ -19,6 +19,10 @@ date: {
 amount: {
   type: Number,
   required: true
+},
+icon: {
+  type: String,
+  required: true
 }
 })
 
