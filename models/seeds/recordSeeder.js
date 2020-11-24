@@ -9,8 +9,11 @@ const Record = require('../record')
 
 // 產生種子資料
 db.once('open', () => {
-  records.result.forEach(record => {
-    Record.create(Object.assign({}, record))
-  })
-  console.log('create records data done!')
+  console.log('records database connected!')
+
+  const promise = []
+    records.result.forEach(record => {
+      promise.push(Record.create(Object.assign({}, record)))
+    })
+  Promise.all(promise).then(() => process.exit())
 })
