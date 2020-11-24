@@ -2,7 +2,7 @@
   {{!-- 類別篩選器 --}}
   <div class="row justify-content-center mb-5">
     <div class="dropdown col-4 text-center justify-content-center">
-      <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         類別篩選
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -29,7 +29,7 @@
           <div class="d-flex">
             <i class="{{this.icon}} mr-5" style="font-size: 30px; color: #a9cccc; line-height: 80px; width: 15%"></i>
             <div class="d-flex flex-column justify-content-center text-nowrap">
-              <p class="m-0" style="font-size: 25px">{{this.name}}</p>
+              <p class="m-0" style="font-size: 20px">{{this.name}}</p>
               <p class="m-0" style="font-size: 15px">{{this.date}}</p>
             </div>
           </div>
@@ -37,8 +37,8 @@
         </div>
         <div class="d-flex align-items-center">
           <a class="btn btn-outline-info" href="/records/{{this._id}}/edit">修改</a>
-          <form action="/records/{{this._id}}?_method=DELETE" method="POST">
-            <button class="btn btn-outline-danger ml-2">刪除</button>
+          <form action="/records/{{this._id}}?_method=DELETE" method="POST" onsubmit="return webConfirm('確定刪除這個項目嗎？')">
+            <button class="btn btn-outline-warning ml-2">刪除</button>
           </form>
         </div>
       </li>
