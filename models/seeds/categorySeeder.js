@@ -7,9 +7,9 @@ const Category = require('../category')
 // 產生種子資料
 db.once('open', () => {
   console.log('category database connected!')
-
+  // 建立 promise
   const promise = []
-
+  // 推入 promise function
   promise.push(
     Category.create(
       {
@@ -34,5 +34,6 @@ db.once('open', () => {
       }
     )
   )
+  // db 關門
   Promise.all(promise).then(() => db.close())
 })
