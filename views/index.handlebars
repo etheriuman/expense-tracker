@@ -22,6 +22,12 @@
     </div>
   </div>
   {{!-- 項目列表 --}}
+  {{#unless records.length}}
+  <div class="row justify-content-center">
+    <div class="col-12 text-center text-secondary mt-5"><i class="far fa-credit-card" style="font-size: 100px;"></i></div>
+    <div class="col-12 text-center text-secondary mt-5">是時候消費一下了吧...！</div>
+  </div>
+  {{/unless}}
   <div class="row justify-content-center">
     <ul class="list-group list-group-flush col-12 col-sm-10 col-md-8" style="max-height: 60vh; overflow:auto">
       {{#each records}}
