@@ -2,7 +2,7 @@
   愛亂花錢ㄉ老爸為了讓老媽放心而自己動手做了一個幫助自己記帳的應用程式。
 
 
-![Image]()
+![Image](https://github.com/etheriuman/expense-tracker/blob/master/expense-tracker.png)
 ---
 - ## 運行環境需求:
   Node.js
