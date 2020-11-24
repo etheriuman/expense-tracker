@@ -1,6 +1,6 @@
 # 老爸ㄉ家庭記帳本
   愛亂花錢ㄉ老爸為了讓老媽放心而自己動手做了一個幫助自己記帳的應用程式。
-
+  [現在就去試試!](https://sleepy-badlands-85278.herokuapp.com/)
 
 ![Image](https://github.com/etheriuman/expense-tracker/blob/master/expense-tracker.png)
 ---
