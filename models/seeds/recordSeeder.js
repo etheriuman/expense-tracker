@@ -9,13 +9,9 @@ const Record = require('../record')
 
 // 產生種子資料
 db.once('open', () => {
-  console.log('records database connected!')
-  // 建立 promise
-  const promise = []
-    // 推入 promise function
-    records.result.forEach(record => {
-      promise.push(Record.create(Object.assign({}, record)))
-    })
-  // 終止程序
-  Promise.all(promise).then(() => process.exit())
+  console.log('db connected! start seeding...')
+  // 開始製作種子資料
+  Record.create(records.result)
+        // 關閉 db connection
+        .then(() => db.close()) 
 })
